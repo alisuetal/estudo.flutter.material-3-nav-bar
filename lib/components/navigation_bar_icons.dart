@@ -5,6 +5,7 @@ class NavBarIcon extends StatelessWidget {
   final IconData icon;
   final IconData inactiveIcon;
   final String? label;
+  final bool? labelOnActive;
   final bool darkMode;
   final bool active;
   final Function() onClick;
@@ -12,6 +13,7 @@ class NavBarIcon extends StatelessWidget {
   const NavBarIcon({
     required this.icon,
     this.label,
+    this.labelOnActive,
     required this.darkMode,
     required this.active,
     required this.inactiveIcon,
@@ -53,15 +55,17 @@ class NavBarIcon extends StatelessWidget {
             height: 4,
           ),
           if (label != null)
-            Text(
-              label!,
-              style: TextStyle(
-                fontSize: 12,
-                letterSpacing: 0.5,
-                color: _activeOpacity(),
-                fontWeight: FontWeight.w700,
+            if (labelOnActive == null ||
+                (labelOnActive == true && active == true))
+              Text(
+                label!,
+                style: TextStyle(
+                  fontSize: 12,
+                  letterSpacing: 0.5,
+                  color: _activeOpacity(),
+                  fontWeight: FontWeight.w700,
+                ),
               ),
-            ),
         ],
       ),
     );
