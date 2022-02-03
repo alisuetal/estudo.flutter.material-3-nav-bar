@@ -3,13 +3,13 @@ With three different styles and color adaptative (limited).
 
 ## Showcase
 
-**Always visible labels:**
+**Always visible labels:**<br>
 ![](https://i.imgur.com/YTWr5Mr.gif)
 
-**Only visible when active labels:**
+**Only visible when active labels:**<br>
 ![](https://i.imgur.com/GycCR5R.gif)
 
-**No labels:**
+**No labels:**<br>
 ![](https://i.imgur.com/uM022RP.gif)
 
 ## How to use
