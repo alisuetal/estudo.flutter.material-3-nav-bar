@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 class NavBarIcon extends StatelessWidget {
   final IconData icon;
   final IconData inactiveIcon;
-  final String label;
+  final String? label;
   final bool darkMode;
   final bool active;
   final Function() onClick;
 
   const NavBarIcon({
     required this.icon,
-    required this.label,
+    this.label,
     required this.darkMode,
     required this.active,
     required this.inactiveIcon,
@@ -52,15 +52,16 @@ class NavBarIcon extends StatelessWidget {
           const SizedBox(
             height: 4,
           ),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 12,
-              letterSpacing: 0.5,
-              color: _activeOpacity(),
-              fontWeight: FontWeight.w700,
+          if (label != null)
+            Text(
+              label!,
+              style: TextStyle(
+                fontSize: 12,
+                letterSpacing: 0.5,
+                color: _activeOpacity(),
+                fontWeight: FontWeight.w700,
+              ),
             ),
-          ),
         ],
       ),
     );
